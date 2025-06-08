@@ -1,0 +1,40 @@
+<div style="text-align: center; margin-bottom: 20px;">
+  <h1 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px;">🚦 Elevator Simulation</h1>
+  <p style="color: #555;">Control panel to simulate real-time smart elevator operations</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+  <label>
+    Elevators:<br />
+    <input type="number" [(ngModel)]="numElevators" min="1" max="10" />
+  </label>
+
+  <label>
+    Floors:<br />
+    <input type="number" [(ngModel)]="numFloors" min="1" max="50" />
+  </label>
+
+  <label>
+    Request frequency:<br />
+    <input type="number" [(ngModel)]="requestFrequency" min="0" max="10" step="0.1" />
+  </label>
+
+  <label>
+    Speed:<br />
+    <select [(ngModel)]="speedMultiplier">
+      <option [value]="1">1x</option>
+      <option [value]="2">2x</option>
+      <option [value]="5">5x</option>
+    </select>
+  </label>
+</div>
+
+<div style="text-align: center; margin-bottom: 1rem;">
+  <button (click)="startSimulation()">Start</button>
+  <button (click)="stopSimulation()">Stop</button>
+  <button (click)="resetSimulation()">Reset</button>
+</div>
+
+<hr />
+
+<app-elevator-display [elevators]="elevators"></app-elevator-display>
