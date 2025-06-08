@@ -1,59 +1,109 @@
-# ElevatorSimulatorTest
+# 8 Byte ElevatorSimulator Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+This project is an **Elevator Simulation Application** built with [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
 
-## Development server
+### 🌐 Live Deployment
 
-To start a local development server, run:
+👉 **URL**: [http://18.233.96.124/](http://18.233.96.124/)  
+🎮 Visit the simulation to interact with the elevator system in real time!
+
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Development Server](#development-server)
+- [Code Scaffolding](#code-scaffolding)
+- [Building the Project](#building-the-project)
+- [Running Tests](#running-tests)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+- [License](#license)
+
+---
+
+## Project Overview
+
+ElevatorSimulatorTest is a web-based application that simulates the operation of elevators in a multi-floor building. The application models elevator movements, floor requests, and real-time status updates, providing an interactive UI to visualize elevator operations.
+
+This project demonstrates:
+
+- Angular standalone components and modular architecture
+- Event-driven elevator request handling and state management
+- Building and deploying an Angular SPA (Single Page Application)
+- Integration with process managers and reverse proxy for production deployment
+
+---
+
+## Features
+
+- Simulates multiple elevator  floors.
+- Real-time elevator movement and floor selection.
+- Interactive user interface for sending elevator requests.
+- Responsive design and smooth animations.
+- Easy to build and deploy as a static Angular app.
+
+---
+
+## Technologies Used
+
+- Angular 20.0.1
+- TypeScript
+- Node.js 20.x
+- npm
+- http-server (for serving production build)
+- PM2 (optional, for process management)
+- NGINX (optional, for reverse proxy in production)
+
+---
+
+## Development Server
+
+To start the development server locally:
 
 ```bash
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+ ```
+ 
+## Code Scaffolding
+To generate a new Angular component, use:
 
 ```bash
 ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+ ```
+## Building the Project
+To build the project for production:
 
 ```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+ng build --configuration production
+ ```
+## Deployment
+### Serve Production Build Locally
+You can serve the production build locally using http-server:
 ```bash
-ng test
+npx http-server ./dist/elevator-simulator-test -p 4200 --host 0.0.0.0 --spa 
 ```
+## Using PM2 to Manage the Server
+For production, use PM2 to keep the server alive:
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```bash 
+pm2 start http-server --name elevator-app -- ./dist/elevator-simulator-test -p 4200 --host 0.0.0.0 --spa
 ```
+## Usage
+1. Open the app in a browser --> http://18.233.96.124/
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+2.  Use the UI to request elevator floors.
+3. Observe the elevator moving between floors based on requests.
 
-## Additional Resources
+4. The app simulates realistic elevator behavior, including queues.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## 🙋 Author
+
+Ashis Kumar Nahak -DevOps Developer
